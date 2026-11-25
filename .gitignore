@@ -2,3 +2,5 @@
 signing_key.pem
 __pycache__/
 *.py[cod]
+
+build-overlay-*/

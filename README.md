@@ -57,24 +57,24 @@ adb install -r H:\LXH\client\luoxiaohei-local.apk
 
 ---
 
-## 如果本机 IP 变了，怎么重新生成 APK
+## 从原版 APK 重新打包
 
-```bat
-:: 1. 改地址（把 <新IP> 换成你的局域网 IP）
-python H:\LXH\client\patch_neturl.py ^
-  H:\LXH\apk_extract\assets\script\gamelogic\zbNetUrl.lua ^
-  H:\LXH\client\zbNetUrl.patched.lua ^
-  "47.93.115.92,lxh-global.bjmanya.com,192.168.2.150" ^
-  <新IP>
+在 `client` 目录执行。准备原版底包 `luoxiaoheizhanjiyaolingbu.apk`，安装 Python 的 `cryptography`。底包和签名私钥 `signing_key.pem` 均不随 Git 分发。要覆盖安装已发布的 v1.0.0，需要对应的原签名私钥，`packaging` 中只提供公开证书。
 
-:: 2. 重新打包签名
-python H:\LXH\client\build_apk.py ^
-  H:\LXH\luoxiaoheizhanjiyaolingbu.apk ^
-  H:\LXH\client\zbNetUrl.patched.lua ^
-  H:\LXH\client\luoxiaohei-local.apk
+下面会应用当前 `replace/` 中的客户端改动，并生成公网 v1.0.0 APK。将命令末尾的 IP 换成实际游戏服地址即可。Lua 字节码处理依赖已放在 `vendor/ljd/`。
+
+```powershell
+$stage = Join-Path (Get-Location).Path ('build-overlay-' + [guid]::NewGuid())
+Copy-Item -LiteralPath .\replace -Destination $stage -Recurse
+python .\patch_neturl.py .\packaging\zbNetUrl.original.lua "$stage\assets\script\gamelogic\zbNetUrl.lua" "47.93.115.92,lxh-global.bjmanya.com,192.168.2.150" 35.78.231.87
+if ($LASTEXITCODE -ne 0) { throw '修改地址失败' }
+Copy-Item -LiteralPath .\packaging\AndroidManifest-v1.0.0.xml -Destination "$stage\AndroidManifest.xml"
+python .\build_apk.py .\luoxiaoheizhanjiyaolingbu.apk "$stage" .\luoxiaohei-v1.0.0.apk --certificate .\packaging\v1.0.0-signing-cert.der
+if ($LASTEXITCODE -ne 0) { throw 'APK 打包或签名失败' }
+icacls.exe .\luoxiaohei-v1.0.0.apk /inheritance:e
 ```
 
-（第 1 步的输入用**原始** apk 里解包出的 `zbNetUrl.lua`；第 2 步的输入是**原始 apk**。）
+确认打包成功后可清理本次生成的 `build-overlay-*` 目录。
 
 ---
 

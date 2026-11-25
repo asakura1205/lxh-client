@@ -1,6 +1,7 @@
 import sys
+from pathlib import Path
 
-sys.path.insert(0, r'H:/LXH/ljd_src/ljd-main')
+sys.path.insert(0, str(Path(__file__).resolve().parent / 'vendor' / 'ljd'))
 import ljd, ljd.rawdump.code
 from ljd.rawdump.opcode.v20 import _OPCODES
 

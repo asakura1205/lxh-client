@@ -9,6 +9,7 @@
 """
 import argparse
 import os, zipfile, hashlib, base64, datetime
+from pathlib import Path
 
 from cryptography import x509
 from cryptography.x509.oid import NameOID
@@ -17,7 +18,7 @@ from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives.serialization import pkcs7
 
 PLIST = "assets/plist.txt"
-KEYSTORE = r"H:\LXH\client\signing_key.pem"
+KEYSTORE = Path(__file__).resolve().with_name("signing_key.pem")
 
 
 def md5_upper(b):
@@ -89,7 +90,7 @@ def load_or_make_key():
     return key, cert
 
 
-def main(src, replace_dir, out, *, reuse_cert=False):
+def main(src, replace_dir, out, *, reuse_cert=False, certificate=None):
     # 1. 收集替换文件（路径相对 replace_dir，如 assets/script/...）
     repl = {}
     for root, _, files in os.walk(replace_dir):
@@ -145,11 +146,14 @@ def main(src, replace_dir, out, *, reuse_cert=False):
     manifest = build_manifest([(n, d) for n, d, _ in entries])
     sf = build_sf(manifest, [(n, d) for n, d, _ in entries])
     key, cert = load_or_make_key()
-    if reuse_cert:
-        certs = pkcs7.load_der_pkcs7_certificates(src_zip.read("META-INF/CERT.RSA"))
-        if len(certs) != 1 or certs[0].public_key() != key.public_key():
-            raise ValueError("Base APK signing certificate does not match the local signing key")
-        cert = certs[0]
+    if reuse_cert or certificate:
+        if certificate:
+            certificates = [x509.load_der_x509_certificate(Path(certificate).read_bytes())]
+        else:
+            certificates = pkcs7.load_der_pkcs7_certificates(src_zip.read("META-INF/CERT.RSA"))
+        if len(certificates) != 1 or certificates[0].public_key() != key.public_key():
+            raise ValueError("Signing certificate does not match the local signing key")
+        cert = certificates[0]
     rsa_sig = (pkcs7.PKCS7SignatureBuilder()
                .set_data(sf)
                .add_signer(cert, key, hashes.SHA256())
@@ -173,7 +177,9 @@ if __name__ == "__main__":
     parser.add_argument("source")
     parser.add_argument("replace_dir")
     parser.add_argument("output")
-    parser.add_argument("--reuse-cert", action="store_true",
+    signing = parser.add_mutually_exclusive_group()
+    signing.add_argument("--reuse-cert", action="store_true",
                         help="Use the base APK's certificate with the local signing key")
+    signing.add_argument("--certificate", help="Use an existing DER certificate with the local signing key")
     args = parser.parse_args()
-    main(args.source, args.replace_dir, args.output, reuse_cert=args.reuse_cert)
+    main(args.source, args.replace_dir, args.output, reuse_cert=args.reuse_cert, certificate=args.certificate)
