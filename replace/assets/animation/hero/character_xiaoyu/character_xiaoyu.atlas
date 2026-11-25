@@ -1,0 +1,230 @@
+
+character_xiaoyu.png
+size: 456,125
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+_0000_hat1
+  rotate: false
+  xy: 210, 82
+  size: 71, 41
+  orig: 71, 41
+  offset: 0, 0
+  index: -1
+_0001_hair1
+  rotate: true
+  xy: 385, 21
+  size: 12, 29
+  orig: 12, 29
+  offset: 0, 0
+  index: -1
+_0002_hair2
+  rotate: true
+  xy: 393, 65
+  size: 15, 54
+  orig: 15, 54
+  offset: 0, 0
+  index: -1
+_0003_hair3
+  rotate: false
+  xy: 171, 2
+  size: 42, 26
+  orig: 42, 26
+  offset: 0, 0
+  index: -1
+_0004_hair4
+  rotate: true
+  xy: 305, 2
+  size: 14, 21
+  orig: 14, 21
+  offset: 0, 0
+  index: -1
+_0005_faceweak
+  rotate: false
+  xy: 283, 82
+  size: 55, 41
+  orig: 55, 41
+  offset: 0, 0
+  index: -1
+_0006_facesmile
+  rotate: false
+  xy: 340, 82
+  size: 55, 41
+  orig: 55, 41
+  offset: 0, 0
+  index: -1
+_0007_faceanger
+  rotate: false
+  xy: 397, 82
+  size: 55, 41
+  orig: 55, 41
+  offset: 0, 0
+  index: -1
+_0008_facecry
+  rotate: false
+  xy: 210, 39
+  size: 55, 41
+  orig: 55, 41
+  offset: 0, 0
+  index: -1
+_0009_face
+  rotate: false
+  xy: 267, 39
+  size: 55, 41
+  orig: 55, 41
+  offset: 0, 0
+  index: -1
+_0010_hair5
+  rotate: true
+  xy: 390, 35
+  size: 11, 42
+  orig: 11, 42
+  offset: 0, 0
+  index: -1
+_0011_hair6
+  rotate: true
+  xy: 324, 37
+  size: 14, 64
+  orig: 14, 64
+  offset: 0, 0
+  index: -1
+_0012_hat2
+  rotate: false
+  xy: 393, 48
+  size: 45, 15
+  orig: 45, 15
+  offset: 0, 0
+  index: -1
+_0013_lingzi
+  rotate: false
+  xy: 385, 2
+  size: 21, 17
+  orig: 21, 17
+  offset: 0, 0
+  index: -1
+_0014_lingzi2
+  rotate: true
+  xy: 347, 2
+  size: 16, 11
+  orig: 16, 11
+  offset: 0, 0
+  index: -1
+_0015_jian
+  rotate: true
+  xy: 171, 30
+  size: 9, 16
+  orig: 9, 16
+  offset: 0, 0
+  index: -1
+_0016_lh1
+  rotate: false
+  xy: 215, 2
+  size: 16, 35
+  orig: 16, 35
+  offset: 0, 0
+  index: -1
+_0017_lh1
+  rotate: false
+  xy: 328, 2
+  size: 15, 14
+  orig: 15, 14
+  offset: 0, 0
+  index: -1
+_0018_yifu1
+  rotate: true
+  xy: 416, 5
+  size: 18, 23
+  orig: 18, 23
+  offset: 0, 0
+  index: -1
+_0019_yifu2
+  rotate: true
+  xy: 416, 25
+  size: 8, 22
+  orig: 8, 22
+  offset: 0, 0
+  index: -1
+_0020_yifu3
+  rotate: true
+  xy: 273, 2
+  size: 14, 30
+  orig: 14, 30
+  offset: 0, 0
+  index: -1
+_0021_skirt
+  rotate: true
+  xy: 147, 2
+  size: 37, 22
+  orig: 37, 22
+  offset: 0, 0
+  index: -1
+_0022_body
+  rotate: true
+  xy: 233, 6
+  size: 31, 38
+  orig: 31, 38
+  offset: 0, 0
+  index: -1
+_0023_rh1
+  rotate: true
+  xy: 313, 18
+  size: 17, 32
+  orig: 17, 32
+  offset: 0, 0
+  index: -1
+_0024_rh2
+  rotate: false
+  xy: 360, 7
+  size: 10, 11
+  orig: 10, 11
+  offset: 0, 0
+  index: -1
+_0025_weapon
+  rotate: false
+  xy: 324, 53
+  size: 67, 27
+  orig: 67, 27
+  offset: 0, 0
+  index: -1
+_0026_rh3
+  rotate: false
+  xy: 372, 8
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+_0027_rl
+  rotate: true
+  xy: 347, 20
+  size: 15, 36
+  orig: 15, 36
+  offset: 0, 0
+  index: -1
+_0028_ll
+  rotate: true
+  xy: 273, 18
+  size: 19, 38
+  orig: 19, 38
+  offset: 0, 0
+  index: -1
+_0029_bairback
+  rotate: false
+  xy: 147, 41
+  size: 61, 82
+  orig: 61, 82
+  offset: 0, 0
+  index: -1
+_0030_hat3
+  rotate: true
+  xy: 440, 30
+  size: 33, 14
+  orig: 33, 14
+  offset: 0, 0
+  index: -1
+游戏尺寸
+  rotate: true
+  xy: 2, 6
+  size: 117, 143
+  orig: 117, 143
+  offset: 0, 0
+  index: -1
