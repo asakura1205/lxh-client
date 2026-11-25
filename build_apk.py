@@ -5,9 +5,10 @@
 - 同步更新 assets/plist.txt 中被替换文件的 MD5 与大小
 - 剔除旧签名，做 JAR v1 签名（SHA1 摘要 + 无 SMIMECapabilities 属性）
 
-用法: python build_apk.py <原始apk> <replace_dir> <输出apk>
+用法: python build_apk.py <原始apk> <replace_dir> <输出apk> [--reuse-cert]
 """
-import sys, os, zipfile, hashlib, base64, datetime
+import argparse
+import os, zipfile, hashlib, base64, datetime
 
 from cryptography import x509
 from cryptography.x509.oid import NameOID
@@ -88,7 +89,7 @@ def load_or_make_key():
     return key, cert
 
 
-def main(src, replace_dir, out):
+def main(src, replace_dir, out, *, reuse_cert=False):
     # 1. 收集替换文件（路径相对 replace_dir，如 assets/script/...）
     repl = {}
     for root, _, files in os.walk(replace_dir):
@@ -144,6 +145,11 @@ def main(src, replace_dir, out):
     manifest = build_manifest([(n, d) for n, d, _ in entries])
     sf = build_sf(manifest, [(n, d) for n, d, _ in entries])
     key, cert = load_or_make_key()
+    if reuse_cert:
+        certs = pkcs7.load_der_pkcs7_certificates(src_zip.read("META-INF/CERT.RSA"))
+        if len(certs) != 1 or certs[0].public_key() != key.public_key():
+            raise ValueError("Base APK signing certificate does not match the local signing key")
+        cert = certs[0]
     rsa_sig = (pkcs7.PKCS7SignatureBuilder()
                .set_data(sf)
                .add_signer(cert, key, hashes.SHA256())
@@ -163,4 +169,11 @@ def main(src, replace_dir, out):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2], sys.argv[3])
+    parser = argparse.ArgumentParser()
+    parser.add_argument("source")
+    parser.add_argument("replace_dir")
+    parser.add_argument("output")
+    parser.add_argument("--reuse-cert", action="store_true",
+                        help="Use the base APK's certificate with the local signing key")
+    args = parser.parse_args()
+    main(args.source, args.replace_dir, args.output, reuse_cert=args.reuse_cert)
