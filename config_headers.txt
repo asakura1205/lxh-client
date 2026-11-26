@@ -1,0 +1,169 @@
+### activenessReward.csv
+EN: id,icon,requireActive,rewardTypeDesc,rewardItem
+CN: ﻿id,icon,requireActive,rewardTypeDesc,rewardItem
+### arenaBase.csv
+EN: desc,竞技场基础配置
+CN: path,value
+### arenaBestRankAward.csv
+EN: rank,diamond
+CN: ﻿最高名次段,获得钻石
+### arenaDailyAward.csv
+EN: rank,diamond,rankMoney
+CN: ﻿当前名次,结算奖励钻石数量,结算奖励金币数量
+### avatar.csv
+EN: templateId,parentAvatarId,name,headIcon,lordhead,bone,hudOffset,card,herotalk,get,click,bigskill,provoke,die
+CN: ﻿模板Id,模板Id,名字,头像,主公头像,骨骼,血条位置,武将卡牌,剧情对白人物头像,获得,点击,放大招,挑衅,死亡
+### avatarsound.csv
+EN: avatarId,sequenceId,sound1,sound1Frame,sound2,sound2Frame,attackSound,rem
+CN: ﻿伙伴形象id,动作名字,对应音效路径,音效1对应动画的播放其实帧,对应音效路径,音效1对应动画的播放其实帧,攻击音效,备注
+### barRewards.csv
+EN: poolType,awardType,templateId,count,weight,bPreview,rem,rem,rem
+CN: ﻿抽取库种类id，类型参考 EBarAwardPoolType,奖励类型，类型参考 EAwardType,物品/伙伴id,数量，伙伴也是数量,权重,伙伴预览,用途,奖励内容,备注
+### bgzCommon.csv
+EN: resetCostDiamond,20
+CN: path,value
+### bgzScoreAward.csv
+EN: score,awardList
+CN: ﻿累计积分条件,奖励
+### buff.csv
+EN: id,name,description,buffType,pataDesc,param1,param2,round,replaceadd,canClear,bossImmune
+CN: ﻿id,名字,描述,buff类型,pataDesc,参数1,参数2,持续回合数,覆盖1/叠加2,是否可驱散：1可驱散/0不可驱散,boss是否免疫（0有效/1免疫）
+### buildingUpgrade.csv
+EN: lvl,farmCost,farmCD,foodIncome,maxFood
+CN: ﻿建筑等级,农田升级所需费用（金喵币）,农田升级所需时间（分钟）,农田猫饭每小时收益,农田猫饭收益上限
+### bulletscreen.csv
+EN: id,sMsg
+CN: ﻿副本类型id,"弹幕消息字符串(不超过45个字符，最好控制在30个之内,一个汉字占三个字符)"
+### combattalk.csv
+EN: 12345,"[{""section"":1,""triggerRound"":0,""content"":[{""dir"":2,""name"":""谛听"",""avatarId"":1013,""desc"":""交出天明珠，饶你不死。""},{""dir"":1,""name"":""罗小黑"",""avatarId"":1001,""desc"":""如果我说不呢。""},{""dir"":2,""name"":""谛听"",""avatarId"":1013,""desc"":""那我就休怪我不客气了！""}]},{""section"":1,""triggerRound"":3,""content"":[{""dir"":1,""name"":""罗小黑"",""avatarId"":1001,""desc"":""你……是谁！""},{""dir"":1,""name"":""神秘人"",""avatarId"":1234560,""desc"":""你说我？""}]},{""section"":1,""triggerRound"":31,""content"":[{""dir"":1,""name"":""玩家"",""avatarId"":0,""desc"":""我叫玩家，这是哪里……""},{""dir"":2,""name"":""谛听"",""avatarId"":1013,""desc"":""哼……还有同伙。接招吧！""},{""dir"":1,""name"":""玩家"",""avatarId"":0,""desc"":""哇！活着的谛听！""}]},{""section"":1,""triggerRound"":4,""content"":[{""dir"":1,""name"":""玩家"",""avatarId"":0,""desc"":""为什么打我……""},{""dir"":1,""name"":""罗小黑"",""avatarId"":1001,""desc"":""局势这么混乱，还是先用法宝牵制住谛听，然后逃跑好了。""}]}]"
+CN: id,talk
+### dailyTask.csv
+EN: type,requireLevel,maxComplete,active,award0,award1,award2,description,linkName,icon,linkUrl
+CN: ﻿类型，参见 EDailyTaskType,需要主公等级,完成次数,奖励活跃度,15级前完成奖励（主要应对跳级现象）,"满级前完成奖励 [[奖励类型,ID,数量],[奖励类型,ID,数量]...]",满级后完成奖励,描述,linkName,icon,linkUrl
+### effect.csv
+EN: templateId,name,sound,ccbi,durationTime,dummy,attackEffectPosX,attackEffectPosY,rotateY,heroBehide,parentNode,sequenceName,scale
+CN: ﻿模板Id,名字,对应音效,ccbi,durationTime,dummy,特效绑定偏移,特效绑定偏移,Y轴翻转,伙伴身前身后(身前0身后1),父节点(场景0，伙伴1）,sequenceName,动画缩放
+### equipCuilianUpgrade.csv
+EN: lvl,2,3,4,5,6,7
+CN: ﻿当前装备等级,绿色品质下一级所需经验,蓝色品质下一级所需经验,紫色品质下一级所需经验,金色品质下一级所需经验,红色品质下一级所需经验,黑色品质下一级所需经验
+### equipHole.csv
+EN: index,lvl,cost
+CN: ﻿装备开孔索引,需要装备等级,开孔消耗材料数量
+### equipQuality.csv
+EN: quality,composeFragNum,composeGold,decomposeEquip,decomposeEquipFrag,exchangeExp,exchangeFragExp
+CN: ﻿当前装备品质,对应品质合成需要碎片数量,对应品质合成需要消耗金喵币,对应品质装备分解获得万能碎片数量,对应品质碎片分解获得万能碎片数量,整装兑换淬炼经验值,碎片兑换淬炼经验值
+### equipUpgrade.csv
+EN: lvl,1,2,3,4,5,6,7
+CN: ﻿当前装备等级,白色品质下一级所需费用,绿色品质下一级所需费用,蓝色品质下一级所需费用,紫色品质下一级所需费用,金色品质下一级所需费用,红色品质下一级所需费用,黑色品质下一级所需费用
+### equipUpStar.csv
+EN: level,rate,luckyValue,upStarStone,gold,addAttrRate,desc
+CN: ﻿升星等级,成功率,幸运值,升星石,黄金,增加主属性百分比,备注
+### fateEquip.csv
+EN: id,templateId,fateName,fateType,unlockLvl,changeGold,fateCondition,fateAttr,growthPercent,growthValue
+CN: ﻿羁绊ID,伙伴ID,羁绊名称,羁绊类型 EFateType,装备羁绊开放需要伙伴等级,装备羁绊替换消耗金喵币,羁绊条件（数组格式）,提升羁绊属性 EAttrType,提升百分比,提升固定值
+### fateHero.csv
+EN: id,templateId,fateName,fateType,unlockLvl,changeGold,fateCondition,fateAttr,growthPercent,growthValue
+CN: ﻿羁绊ID,伙伴ID,羁绊名称,羁绊类型 EFateType,装备羁绊开放需要伙伴等级,装备羁绊替换消耗金喵币,羁绊条件（数组格式）,提升羁绊属性 EAttrType,提升百分比,提升固定值
+### friendBoss.csv
+EN: level,templateId1,index1,difficult1,victoryAward1,discoveryAward1,participationAward1,killAward1,time1,desc1,templateId2,index2,difficult2,victoryAward2,discoveryAward2,participationAward2,killAward2,time2,desc2
+CN: ﻿boss等级,伙伴模板id,站位,难度系数,"战斗胜利奖励[[奖励类型，id，数量],[奖励类型，id，数量]]1==金币3==猫饭21==物品22==物品碎片",发现boss奖励,参与奖励,击杀奖励,停留时间（单位：秒）,描述,伙伴模板id,站位,难度系数,战斗胜利奖励,发现boss奖励,参与奖励,击杀奖励,停留时间,描述
+### functionUnlock.csv
+EN: id,name,requireForce,requireLevel,showTime,icon,functionDesc,unlockDesc,linkIcon,linkUrl
+CN: ﻿功能类型 EFuncType,功能名称,解锁章节,解锁等级,展示时机(立即是0，回到主城是1),功能icon,功能描述（25汉字内）,解锁条件描述（30汉字内）,linkIcon,linkUrl
+### fvAttr.csv
+EN: attr,value,rem
+CN: ﻿属性类型,战斗力系数,备注
+### gameCommon.csv
+EN: desc,各种杂项基础配置
+CN: path,value
+### gemCompose.csv
+EN: level,templateId,weight,desc
+CN: ﻿灵质等级,随机结果,权重,描述
+### guidetalk.csv
+EN: 501,"[{""dir"":1,""name"":""小黑"",""avatarId"":1001,""desc"":""我不行了。""}]"
+CN: id,talk
+### guidetitle.csv
+EN: 1,"[{""desc"":""戳…戳…""},{""desc"":""醒醒…快醒醒…""}]"
+CN: id,talk
+### hero.csv
+EN: id,name,description0,description,description2,avatarId,rarity,heroType,attackType,star,starMax,quality,qualityMax,qualityUpId,mainAttrUpId,tupo,extraAttrList,extraAttrUpId,upStarFrag1,upStarFrag2,upStarFrag3,upStarFrag4,upStarFrag5,upStarFrag6,upStarFrag7,upStarFrag8,attrStar1,attrStar2,attrStar3,attrStar4,attrStar5,attrStar6,attrStar7,attrStar8,skillId0,skillLvl0,skillId1,skillLvl1,skillId2,skillLvl2,skillId3,skillLvl3,skillId4,skillLvl4,skillSequence,force,forceGrowth,intelligence,intelligenceGrowth,tili,tiliGrowth,hp,physicAttack,magicAttack,physicDefend,magicDefend,violent,tough,hit,dodge,pierceDamage,block,preShow,gmShow,shortWord1,shortWord2,rem,rem2
+CN: ﻿模版ID,名称,定位描述,描述(不能包含半角符号),描述2(不能包含半角符号),形象ID,资质 ERarityType,伙伴类型(力智体) EHeroType,攻击类型 (1:物理攻击，2：法术  参考EAttackType),出生星数,最大星星数,出生品质等级,最高品质等级,进阶id,修炼主属性id,突破等级上限,"铸灵二级属性列表[EAttrType,EAttrType,EAttrType,EAttrType]",铸灵升级id,合成1星需要碎片数,1升2星需要碎片数,2升3星需要碎片数,3升4星需要碎片数,4升5星需要碎片数,5升6星需要碎片数,6升7星需要碎片数,7升8星需要碎片数,1星三围数值系数,2星三围数值系数,3星三围数值系数,4星三围数值系数,5星三围数值系数,6星三围数值系数,7星三围数值系数,8星三围数值系数,技能0 ID,解锁品质,技能1 ID,解锁品质,技能2 ID,解锁品质,技能3 ID,解锁品质,技能4 ID,解锁品质,技能释放顺序,力量基础值,基础力量成长值,智力基础值,基础智力成长值,体力基础值,基础体力成长值,血量基础值,物理攻击基础值,法术攻击基础值,物理防御基础值,法术防御基础值,暴击基础值,韧性基础值,命中基础值,闪避基础值,增伤伤害基础值,减伤值基础值,提前展示,GM工具显示,挑衅语言,被挑衅语言,备注,备注2
+### heroExtraAttrUpgrade.csv
+EN: id,lvl,costFrag,addHp,addPhysicAttack,addPhysicDefend,addMagicAttack,addMagicDefend,desc
+CN: ﻿升级ID,加成等级,消耗伙伴碎片数量,血量增加数量,物理攻击增加数量,物理防御增加数量,法术攻击增加数量,法术防御增加数量,备注
+### heroMainAttrUpgrade.csv
+EN: id,lvl,max,unlockLvl,cost,itemRange,itemCost,diamondRange,diamondCost,desc
+CN: ﻿升级ID,修炼阶段,属性加成上限,突破开启需要伙伴等级,突破消耗本命灵石数量,初级修炼随机范围（力智体分别随机）,初级修炼消耗洗灵石,高级修炼随机范围（力智体分别随机）,高级修炼消耗钻石,备注
+### heroQuality.csv
+EN: qualityLevel,quality,desc
+CN: ﻿品阶等级,对应品阶(颜色) EHeroQuality,备注
+### heroQualityUpgrade.csv
+EN: id,qualityLevel,heroLvl,gold,item,attrPhase,desc1,desc2
+CN: ﻿升级ID,品阶等级,进阶需要伙伴等级,进阶消耗金喵币,进阶消耗道具,主属性成长系数,备注1,备注2
+### heroSatisfy.csv
+EN: heroType,dessertList
+CN: ﻿伙伴类型EHeroType 1:力 2：智  3：体,对应甜品
+### heroServant.csv
+EN: id,first,firstLv,firstPercent,firstHero,firstSpecialPercent,second,secondLv,secondPercent,secondHero,secondSpecialPercent,third,thirdLv,thirdPercent,thirdHero,thirdSpecialPercent
+CN: ﻿伙伴ID,第一栏位类别1==力量2==智力3==体力,开放等级,百分比加成,特殊随从ID,特殊随从百分比加成,第二栏位类别1==力量2==智力3==体力,开放等级,百分比加成,特殊随从ID,特殊随从百分比加成,第三栏位类别1==力量2==智力3==体力,开放等级,百分比加成,特殊随从ID,特殊随从百分比加成
+### heroSkill.csv
+EN: id,name,descBase,descLevel,icon,upgradeId,riseEffectId,riseEffectAttackId,flyEffectId,hitEffectId,targetEffectId,baseVar,growthVar,fvBase,fvGrowth,rem
+CN: ﻿技能ID,技能名,技能描述,技能升级效果描述（变量替代符 %d）,技能图标路径,升级ID,自身起手特效,自身起手后攻击特效,飞行特效,命中特效,目标特效,技能基础值,技能成长值,战力基础值,战力成长值,备注
+### heroSkillUpgrade.csv
+EN: id,lvl,skillPoint
+CN: ﻿升级ID,技能等级,需要技能点
+### heroSoul.csv
+EN: id,quality,qualityDesc,grade,gradeDesc,openLevel,price,addAttack,addMagic,addAttackDefense,addMagicDefense,addBlood,remarks
+CN: ﻿将魂id,颜色品质（1.青铜将魂、2.白银将魂、3.黄金将魂、4.白金将魂、5.钻石将魂）,品质描述,品阶(3种:1.开窍、2.凝神、3.化身),品阶描述,品质开放等级,将魂售价,增加物攻,增加法攻,增加物防,增加法防,增加血量,备注
+### heroSoulFrag.csv
+EN: rarity,soul
+CN: ﻿资质 ERarityType,碎片炼化玉魂数量
+### heroSoulHall.csv
+EN: id,name,openLevel,heroId1,heroId2,heroId3,heroId4,heroId5,remarks
+CN: ﻿将魂殿id,将魂殿名称,开启等级,物攻位伙伴id,法攻位伙伴id,物防位伙伴id,法防位伙伴id,血量位伙伴id,备注
+### heroStarUpgrade.csv
+EN: star,gold
+CN: ﻿星级,合成或者升星消耗金喵币
+### heroUpgrade.csv
+EN: lvl,exp
+CN: ﻿等级,升下一级需要经验值
+### item.csv
+EN: id,name,description,icon,quality,type,subType,mainAttr,subAttr,gemShape,box,key,equipSuitId,virtual,fv,sellPrice,preShow,gmShow
+CN: ﻿物品模版ID,名称,描述信息,物品图标,品质 EItemQuality,物品类型,物品子类型(增加物品子类型12==淬炼经验道具，分解有淬炼等级的装备可获得),"主属性列表[[属性EAttrType,加值类型EAttrAdditionType,值,成长值],[属性,加值类型,值,成长值]...]","副属性列表[[属性EAttrType,加值类型EAttrAdditionType,值,成长值],[属性,加值类型,值,成长值]...]",灵质形状 EGemShape,"宝箱内容[[宝箱对应itemBox集合ID,随机次数],[宝箱集合ID,随机次数]...]",宝箱钥匙ID，0则表示不需要,套装,虚拟物品提供数值,战斗力基础值,出售价格（金喵币）,提前预览,GM工具是否显示
+### itemBox.csv
+EN: id,awardType,templateId,count,weight,isNotify,bPreview,rem,rem
+CN: ﻿随机集合id,奖励类型 ECommonAwardType,物品/伙伴id,数量,权重,是否推送到跑马灯(0:否，1：是),是否预览,备注不读,奖励内容
+### mainTask.csv
+EN: id,preId,type,param1,param2,param3,award,linkUrl
+CN: ﻿任务ID,前置任务ID,任务类型 EMainTaskType,条件1,条件2,条件3,奖励,linkUrl
+### playerUpgrade.csv
+EN: lvl,exp,tili
+CN: ﻿当前玩家等级,升级下一级需要经验值,升级下一级奖励鱼干
+### random_name.csv
+EN: firstname,lastname
+CN: ﻿姓,名
+### scene.csv
+EN: 1001,scene/scene_loading1/layer03/bg.jpg,"[{""json"":""scene/scene_loading1/layer02/scene_loading1_layer02.json"",""atlas"":""scene/scene_loading1/layer02/scene_loading1_layer02.atlas"",""sequenceName"":""animation"",""zorder"":""ZORDER_BOTTOM + 1""},{""json"":""scene/scene_loading1/layer01/scene_loading1_layer01.json"",""atlas"":""scene/scene_loading1/layer01/scene_loading1_layer01.atlas"",""sequenceName"":""animation"",""zorder"":""ZORDER_TOP - 100""}]",,,,,,,,,,
+CN: id,bg,layerList,fg,fgPosY,fgPosX,fg1,fg2PosY,fg1PosY,fg2,fg2PosX,fg1PosX,fg2Flip
+### sensitive.csv
+EN: 毛泽东
+CN: value
+### shop.csv
+EN: index,shopType,awardType,templateId,count,comeOutLevel,clearLevel,viplvl,moneyType,price,isSale,grid,weight,effect,desc
+CN: ﻿商品唯一索引,商店类型（分类参见EShopType）,商城物品类型（分类参见ECommonAwardType，21物品，22装备碎片，23伙伴，24伙伴碎片）,模板ID（物品模版或者伙伴模版ID）,数量,购买等级（出现条件）,消失等级,购买权限,购买币种（分类参见EAwardType）,单个原始售价,是否出售,格子数,出现概率(类似酒馆概率算法),流光（0：无流光；1：有流光）,商品名备注
+### stringtable.csv
+EN: 无数据表（客户端未使用 / 只有函数定义）
+CN: 备注
+### tech.csv
+EN: id,type,name,history,description,iconPath,unlockLvl,maxLvl,upInterval,attrType1,attrBase1,attrGrowth1,attrType2,attrBase2,attrGrowth2,upgradeId
+CN: ﻿id,君阁类型 ETechType,名称,君阁描述,描述,图标,解锁需要玩家等级,maxLevel,升级间隔,成长属性1(属性加成类型参考 EAttrType；建筑收益类型参考 ECommonAwardType；支援类型参考 EParterAttrType),初始值1,成长值1,成长属性2,初始值2,成长值2,消耗对应配置类型
+### techUpgrade.csv
+EN: upgradeId,lvl,cost
+CN: ﻿升级ID,等级,猫饭消耗
+### vip.csv
+EN: lvl,growthValue,vipGift,showDiamond,saleDiamond,levelResetNum2,levelResetNum3,equipCritPercent,equipCritMax,bagSlotNum,exchangeGoldNum,exchangeFoodNum,exchangeSkillbookNum,exchangeTiliNum,exchangeGemOpenHoleNum,exchangeDollsMoneyNum,arenaResetNum,pataResetNum,saodang10,friends,heroTrialRate,heroTrialUnlock,bgzReset,bgzBribe,barrageColor
+CN: ﻿VIP等级,所需累计成长值,vip等级礼包,VIP等级礼包原价(钻石),VIP等级礼包售价(钻石),精英关卡重置次数,噩梦关卡重置次数,装备强化暴击概率,装备强化暴击上限,背包容量,金喵币兑换次数,猫饭兑换次数,技能书兑换次数,鱼干兑换次数,解印符兑换次数,娃娃机代币兑换次数,斗帅宫重置次数,地宫探险重置次数,推图十连扫荡开启(0：关， 1：开),好友人数上限,伙伴试练每日可挑战次数的倍数,伙伴试练扫荡是否开启,八卦阵可重置次数,八卦阵线索贿赂次数,弹幕颜色
+### vipShop.csv
+EN: goodsId,channelId,goodsName,goodsType,ccy,price,exp,diamond,firstDiamond,followDiamond,dailyDiamond,isHot,icon
+CN: ﻿商品ID,所属渠道ID,商品名称,商品类型 EVipGoodsType,货币类型 ECCYType,价格,对应VIP经验值,购买钻石,首次购买额外赠送,后续购买额外赠送,每日赠送,热卖标记(0:否/1:是),icon路径
+
