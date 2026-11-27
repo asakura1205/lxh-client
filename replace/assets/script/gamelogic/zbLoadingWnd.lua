@@ -200,8 +200,8 @@ function var_0_0.finishLoad(arg_10_0)
 			-- block empty
 		elseif var_10_0 == 5 then
 			-- block empty
-		elseif zbGlobalUtil:getTargetPlatform() ~= "ios" then
-			g_MainScene:showSubjectWnd()
+		else
+			-- block empty
 		end
 	end
 
